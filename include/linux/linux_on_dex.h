@@ -3,7 +3,7 @@
 
 #include <uapi/linux/capability.h>
 #include <linux/cred.h>
-#include <linux/android_aid.h> // load AID_INET
+#include <linux/android_aid.h>
 
 #define LOD_UID_PREFIX   0x61A8 //1638400000
 #define CAP_LOD_SET      ((kernel_cap_t){{ CAP_TO_MASK(CAP_CHOWN) \
