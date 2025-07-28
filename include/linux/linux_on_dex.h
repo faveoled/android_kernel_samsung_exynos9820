@@ -3,7 +3,6 @@
 
 #include <uapi/linux/capability.h>
 #include <linux/cred.h>
-#include <linux/android_aid.h> // load AID_INET
 
 #define LOD_UID_PREFIX   0x61A8 //1638400000
 #define CAP_LOD_SET      ((kernel_cap_t){{ CAP_TO_MASK(CAP_CHOWN) \
@@ -53,7 +52,7 @@ static inline bool __gid_is_LOD(u32 id, char *id_name){
 		return true;
 
 	// INET gid is allowed for LOD
-	if (id == AID_INET.val)
+	if (id == 3003)
 		return true;
 
 #ifndef CONFIG_SAMSUNG_PRODUCT_SHIP
